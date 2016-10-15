@@ -4,6 +4,7 @@ var path = require('path');
 var APP_DIR = path.resolve(__dirname + '/app');
 var BUILD_DIR = path.resolve(__dirname + '/build');
 
+
 var config = {
   entry: APP_DIR + '/index.jsx',
   output: {
@@ -29,6 +30,14 @@ var config = {
       }
     ]
   }
+}
+
+if(process.env.environment === 'DEV'){
+  console.log(process.env)
+  config = Object.assign(config, require('./webpack.config.dev'));
+} else if(process.env.environment === 'PROD'){
+  console.log(process.env)
+  config = Object.assign(config, require('./webpack.config.prod'));
 }
 
 module.exports = config;
