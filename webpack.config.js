@@ -11,6 +11,12 @@ var config = {
     filename: 'bundle.js',
     publicPath: '/'
   },
+  devtool: 'source-map',
+  devServer: {
+    inline: true,
+    contentBase: BUILD_DIR,
+    port: 3000
+  },
   module: {
     loaders: [
       {
