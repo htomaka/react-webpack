@@ -35,7 +35,8 @@ if (process.env.npm_lifecycle_event === 'dev') {
     devServer: {
       inline: true,
       contentBase: BUILD_DIR,
-      port: 3000
+      port: 3000,
+      historyApiFallback: true
     }
   });
 } else if (process.env.npm_lifecycle_event === 'prod') {
